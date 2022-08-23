@@ -5,6 +5,7 @@ const adjective_whoCtrl = {
     connection.query(`SELECT * FROM trifle_db.who_adjective_t`, (error, results) => {
       if(error) return error;
       const randomNumber = Math.floor((Math.random() * (results.length - 1)) + 1)
+      console.log('request', request.body)
       console.log(results[randomNumber])
       response.send(results[randomNumber])
     })
